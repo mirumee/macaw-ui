@@ -94,7 +94,7 @@ export const light: SaleorThemeColors = {
   },
   gray: {
     default: "#C8C8C8",
-    disabled: "rgba(216, 216, 216, 0.3)",
+    disabled: "#C0CFE2",
   },
 
   input: {

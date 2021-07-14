@@ -1,4 +1,4 @@
-import { darken, fade } from "@material-ui/core/styles/colorManipulator";
+import { fade } from "@material-ui/core/styles/colorManipulator";
 import type { Overrides } from "@material-ui/core/styles/overrides";
 
 import { SaleorThemeColors } from "../types";
@@ -25,8 +25,14 @@ export const buttonOverrides = (colors: SaleorThemeColors): Overrides => {
     MuiButton: {
       contained: {
         "&$disabled": {
-          backgroundColor: fade(colors.primary, 0.12),
-          color: "#FFFFFF",
+          "&$containedPrimary": {
+            color: colors.secondary,
+            backgroundColor: colors.gray.disabled,
+          },
+          "&$containedSecondary": {
+            background: colors.secondary,
+            color: colors.gray.disabled,
+          },
         },
         "&:active": {
           boxShadow: "none",
@@ -60,6 +66,9 @@ export const buttonOverrides = (colors: SaleorThemeColors): Overrides => {
       text: {
         ...containedSecondaryStates,
         "@media(hover: none)": containedSecondaryStates,
+        "&&$disabled": {
+          color: colors.gray.disabled,
+        },
       },
       textPrimary: {
         "&:not($disabled) span": {

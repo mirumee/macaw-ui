@@ -44,6 +44,15 @@ const Default: React.FC = () => {
         <Button color="primary" variant="text">
           Dolor Sit
         </Button>
+        <Button disabled variant="contained" color="primary">
+          Lorem
+        </Button>
+        <Button disabled variant="contained" color="secondary">
+          Ipsum
+        </Button>
+        <Button disabled color="primary" variant="text">
+          Dolor Sit
+        </Button>
       </div>
 
       <Typography className={guideClasses.paragraph} component="p">
