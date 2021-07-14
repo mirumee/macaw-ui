@@ -32,7 +32,7 @@ const Wrapper: React.FC = ({ children }) => {
 };
 
 export const Default: Story = () => (
-  <Backlink onClick={() => undefined}>Go back</Backlink>
+  <Backlink onClick={() => undefined}>Back</Backlink>
 );
 export const Loading: Story = () => (
   <Backlink onClick={() => undefined}>{undefined}</Backlink>
