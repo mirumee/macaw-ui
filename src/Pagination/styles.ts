@@ -44,13 +44,13 @@ const useStyles = makeStyles(
     },
     rowNumberLabel: {},
     rowNumberSelect: {
-      "&:before, &:after": {
+      "&&:before, &&:after": {
         content: "none",
       },
       marginLeft: theme.spacing(1),
     },
     rowNumberSelectLabel: {
-      "&": {
+      "&&": {
         color: theme.palette.primary.main,
       },
     },
