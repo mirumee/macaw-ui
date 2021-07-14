@@ -108,8 +108,8 @@ export const light: SaleorThemeColors = {
     textHover: "#616161",
   },
   paperBorder: "#EAEAEA",
-  primary: "#06847B",
-  secondary: "#21125E",
+  primary: "#056DFF",
+  secondary: "#FFFFFF",
   success: "#5DC292",
   theme: "light",
 };
