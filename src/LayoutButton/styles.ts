@@ -15,6 +15,7 @@ const useStyles = makeStyles(
       fontWeight: 600,
       height: 48,
       padding: theme.spacing(0.5, 2),
+      textAlign: "center",
       textTransform: "uppercase",
       transition: theme.transitions.duration.standard + "ms",
     },
