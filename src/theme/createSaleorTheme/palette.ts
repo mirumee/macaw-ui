@@ -25,7 +25,7 @@ export const createPalette = (
     main: colors.success,
   },
   text: {
-    disabled: colors.font.gray,
+    disabled: colors.font.textDisabled,
     hint: colors.font.gray,
     primary: colors.font.default,
     secondary: colors.font.gray,

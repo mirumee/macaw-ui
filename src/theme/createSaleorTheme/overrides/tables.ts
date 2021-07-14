@@ -20,7 +20,7 @@ export const tableOverrides = (
     head: {
       fontSize: "1.4rem",
       fontWeight: 400,
-      color: colors.font.textDisabled,
+      color: colors.font.gray,
     },
     paddingCheckbox: {
       "&:first-child": {
@@ -36,6 +36,7 @@ export const tableOverrides = (
       "&:first-child": {
         "&:not($paddingCheckbox)": {
           paddingLeft: 24 + "px",
+          paddingRight: 24 + "px",
           textAlign: "left" as "left",
         },
       },

@@ -1,3 +1,5 @@
+import { fade } from "@material-ui/core/styles/colorManipulator";
+
 import { SaleorThemeColors } from "./createSaleorTheme";
 
 export const dark: SaleorThemeColors = {
@@ -85,10 +87,10 @@ export const light: SaleorThemeColors = {
   error: "#FE6D76",
   font: {
     button: "#FFFFFF",
-    default: "#3D3D3D",
-    gray: "#616161",
+    default: "#28234A",
+    gray: fade("#28234A", 0.6),
     textButton: "#06847B",
-    textDisabled: "#616161",
+    textDisabled: fade("#28234A", 0.4),
   },
   gray: {
     default: "#C8C8C8",

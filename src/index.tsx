@@ -10,3 +10,4 @@ export * from "./Alert";
 export * from "./Notification";
 export * from "./UserChipMenu";
 export * from "./ResponsiveTable";
+export * from "./Pagination";
