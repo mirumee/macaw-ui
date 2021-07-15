@@ -9,6 +9,7 @@ import useStyles from "./styles";
 
 export interface PaginationActionsProps {
   className?: string;
+  disabled?: boolean;
   hasNextPage: boolean;
   hasPreviousPage: boolean;
   nextIconButtonProps?: any;
@@ -18,6 +19,7 @@ export interface PaginationActionsProps {
 
 export const PaginationActions: React.FC<PaginationActionsProps> = ({
   className,
+  disabled,
   hasNextPage,
   hasPreviousPage,
   nextIconButtonProps,
@@ -30,17 +32,20 @@ export const PaginationActions: React.FC<PaginationActionsProps> = ({
   const { direction, themeType } = useTheme();
 
   const isDark = themeType === "dark";
+  const previousDisabled = !hasPreviousPage || disabled;
+  const nextDisabled = !hasNextPage || disabled;
 
   return (
     <div className={classNames(classes.actions, className)} {...other}>
       <ButtonBase
         className={classNames(classes.actionsButton, {
           [classes.dark]: isDark,
-          [classes.actionsButtonDisabled]: !hasPreviousPage,
+          [classes.actionsButtonDisabled]: previousDisabled,
         })}
         onClick={onPreviousPage}
-        disabled={!hasPreviousPage}
+        disabled={previousDisabled}
         data-test="button-pagination-back"
+        aria-label="previous page"
       >
         {direction === "rtl" ? <ChevronRight /> : <ChevronLeft />}
       </ButtonBase>
@@ -48,11 +53,12 @@ export const PaginationActions: React.FC<PaginationActionsProps> = ({
       <ButtonBase
         className={classNames(classes.actionsButton, {
           [classes.dark]: isDark,
-          [classes.actionsButtonDisabled]: !hasNextPage,
+          [classes.actionsButtonDisabled]: nextDisabled,
         })}
         onClick={onNextPage}
-        disabled={!hasNextPage}
+        disabled={nextDisabled}
         data-test="button-pagination-next"
+        aria-label="next page"
         {...nextIconButtonProps}
       >
         {direction === "rtl" ? <ChevronLeft /> : <ChevronRight />}

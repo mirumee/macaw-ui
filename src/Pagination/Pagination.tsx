@@ -12,12 +12,14 @@ export interface PaginationProps
   extends PaginationActionsProps,
     Omit<PaginationRowNumberSelectProps, "className" | "choices" | "onChange"> {
   choices?: number[];
+  disabled?: boolean;
   rowNumber: number;
   onRowNumberUpdate?: (rowNumber: number) => void;
 }
 
 export const Pagination: React.FC<PaginationProps> = ({
   choices = [10, 20, 30, 50, 100],
+  disabled,
   hasNextPage,
   hasPreviousPage,
   nextIconButtonProps,
@@ -35,12 +37,14 @@ export const Pagination: React.FC<PaginationProps> = ({
       <div className={classes.spacer}>
         <PaginationRowNumberSelect
           choices={choices}
+          disabled={disabled}
           labels={labels}
           rowNumber={rowNumber}
           onChange={onRowNumberUpdate}
         />
       </div>
       <PaginationActions
+        disabled={disabled}
         hasNextPage={hasNextPage}
         hasPreviousPage={hasPreviousPage}
         nextIconButtonProps={nextIconButtonProps}

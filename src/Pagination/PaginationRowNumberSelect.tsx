@@ -9,6 +9,7 @@ export type PaginationRowNumberSelectLabels = Record<"noOfRows", string>;
 export interface PaginationRowNumberSelectProps {
   choices: number[];
   className?: string;
+  disabled?: boolean;
   labels: PaginationRowNumberSelectLabels;
   rowNumber: number;
   onChange?: (value: number) => void;
@@ -17,6 +18,7 @@ export interface PaginationRowNumberSelectProps {
 export const PaginationRowNumberSelect: React.FC<PaginationRowNumberSelectProps> = ({
   className,
   choices,
+  disabled,
   labels,
   rowNumber,
   onChange,
@@ -29,6 +31,7 @@ export const PaginationRowNumberSelect: React.FC<PaginationRowNumberSelectProps>
       {onChange ? (
         <Select
           data-test-id="PaginationRowNumberSelect"
+          disabled={disabled}
           inputProps={{
             className: classes.rowNumberSelectLabel,
           }}

@@ -10,10 +10,10 @@ const useStyles = makeStyles(
         marginLeft: theme.spacing(1.5),
       },
       "& svg": {
-        color: theme.palette.text.secondary,
+        color: theme.palette.text.primary,
         width: 16,
       },
-      border: `2px solid ${theme.palette.text.secondary}`,
+      border: `2px solid ${theme.palette.text.primary}`,
       height: 36,
       width: 36,
     },
