@@ -25,10 +25,13 @@ const useStyles = makeStyles(
       [theme.breakpoints.down("sm")]: {
         height: mobileAvatarSize,
         width: mobileAvatarSize,
+        lineHeight: mobileAvatarSize + "px",
       },
       height: avatarSize,
+      lineHeight: avatarSize + "px",
       width: avatarSize,
       color: theme.palette.primary.contrastText,
+      textAlign: "center",
     },
     avatarPlaceholder: {
       alignItems: "center",
