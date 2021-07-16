@@ -1,4 +1,5 @@
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import MuiMenuItem from "@material-ui/core/MenuItem";
 import Paper from "@material-ui/core/Paper";
 import Popper from "@material-ui/core/Popper";
 import { fade } from "@material-ui/core/styles/colorManipulator";
@@ -64,14 +65,13 @@ const useStyles = makeStyles(
       padding: 0,
     },
     paper: {
-      borderRadius: 16,
+      borderRadius: 4,
       boxShadow: "0px 6px 30px rgba(0, 0, 0, 0.16)",
       cursor: "default",
-      padding: theme.spacing(3),
       textAlign: "left",
     },
     popper: {
-      marginLeft: theme.spacing(3),
+      margin: theme.spacing(3.5, 0, 0, -3.5),
       zIndex: 2,
     },
     root: {
@@ -79,45 +79,41 @@ const useStyles = makeStyles(
         color: theme.palette.primary.main,
         outline: 0,
       },
-      borderBottomRightRadius: 100,
-      borderTopRightRadius: 100,
+      borderBottomRightRadius: 4,
+      borderTopRightRadius: 4,
       color: fade(theme.palette.text.primary, 0.6),
       cursor: "pointer",
       display: "flex",
       height: 56,
       marginBottom: theme.spacing(),
       overflow: "hidden",
-      padding: theme.spacing(2, 3, 2, 3.5),
+      padding: theme.spacing(2, 3, 2, 3),
       transition: theme.transitions.duration.shortest + "ms",
       width: shrunkMenuWidth,
     },
     rootActive: {
       "&$root": {
         background: theme.palette.background.paper,
-        boxShadow: "0px 6px 30px rgba(0, 0, 0, 0.16)",
-        color: theme.palette.primary.main,
+        color: theme.palette.text.primary,
       },
     },
     rootExpanded: {
       width: menuWidth,
     },
     subMenuLabel: {
-      "&$label": {
-        "&:not(:last-child)": {
-          marginBottom: theme.spacing(2),
-        },
-      },
-      "&:hover, &:focus": {
+      "&:hover, &:active": {
         color: theme.palette.primary.main,
-        outline: 0,
+        fontWeight: "bold",
       },
       background: "none",
       border: "none",
-      color: fade(theme.palette.text.primary, 0.6),
-      padding: 0,
+      color: theme.palette.text.secondary,
+      height: 48,
+      lineHeight: 36 + "px",
       textAlign: "left",
       textDecoration: "none",
       whiteSpace: "nowrap",
+      width: "100%",
     },
   }),
   {
@@ -189,7 +185,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
                   : {};
 
                 return (
-                  <Typography
+                  <MuiMenuItem
                     aria-label={subMenuItem.ariaLabel}
                     component={subMenuItem.external ? "a" : "button"}
                     className={clsx(classes.label, classes.subMenuLabel)}
@@ -199,11 +195,10 @@ export const MenuItem: React.FC<MenuItemProps> = ({
                     }
                     data-test="submenu-item-label"
                     data-test-id={subMenuItem.id}
-                    variant="body2"
                     {...linkProps}
                   >
                     {subMenuItem.label}
-                  </Typography>
+                  </MuiMenuItem>
                 );
               })}
             </Paper>

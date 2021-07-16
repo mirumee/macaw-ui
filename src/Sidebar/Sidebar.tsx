@@ -12,14 +12,14 @@ import { BaseSidebarProps } from "./types";
 const useStyles = makeStyles(
   (theme) => ({
     expandButton: {
-      marginLeft: theme.spacing(2),
+      marginLeft: theme.spacing(1.5),
     },
     float: {
       height: "100vh",
       position: "fixed",
     },
     logo: {
-      margin: `36px 0 ${theme.spacing(3)} ${theme.spacing(3.5)}`,
+      margin: `36px 0 ${theme.spacing(3)} ${theme.spacing(2.5)}`,
     },
     root: {
       transition: "width 0.5s ease",
@@ -30,7 +30,7 @@ const useStyles = makeStyles(
       width: shrunkMenuWidth,
     },
     toolbarContainer: {
-      margin: theme.spacing(1, 0, 1, 2),
+      margin: theme.spacing(1, 0, 1, 1.5),
     },
   }),
   {
