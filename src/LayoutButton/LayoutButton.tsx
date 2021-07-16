@@ -5,17 +5,15 @@ import React from "react";
 
 import useStyles from "./styles";
 
-export const LayoutButton: React.FC<ButtonBaseProps> = ({
-  className,
-  children,
-  ...rest
-}) => {
-  const classes = useStyles();
+export const LayoutButton: React.FC<ButtonBaseProps> = React.forwardRef(
+  ({ className, children, ...rest }, ref) => {
+    const classes = useStyles();
 
-  return (
-    <ButtonBase className={clsx(classes.root, className)} {...rest}>
-      {children}
-    </ButtonBase>
-  );
-};
+    return (
+      <ButtonBase className={clsx(classes.root, className)} ref={ref} {...rest}>
+        {children}
+      </ButtonBase>
+    );
+  }
+);
 LayoutButton.displayName = "LayoutButton";
