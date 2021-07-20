@@ -84,7 +84,7 @@ export const UserChipMenu: React.FC<UserChipProps> = ({
           >
             <Paper>
               <ClickAwayListener onClickAway={closeMenu} mouseEvent="onClick">
-                <Menu>
+                <Menu disablePadding>
                   <UserChipMenuContext.Provider value={closeMenu}>
                     {children}
                   </UserChipMenuContext.Provider>
